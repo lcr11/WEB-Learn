@@ -1,0 +1,51 @@
+<view class="scrollview">
+  <scroll-view scroll-x="true" class="sc-nowrap">
+    <view class="menuitem current">要闻</view>
+    <view class="menuitem">要闻</view>
+    <view class="menuitem">要闻</view>
+    <view class="menuitem">要闻</view>
+      <view class="menuitem">要闻</view>
+    <view class="menuitem">要闻</view>
+    <view class="menuitem">要闻</view>
+      <view class="menuitem">要闻</view>
+    <view class="menuitem">要闻</view>
+    <view class="menuitem">要闻</view>
+      <view class="menuitem">要闻</view>
+    <view class="menuitem">要闻</view>
+    <view class="menuitem">要闻</view>
+  </scroll-view>
+</view>
+
+
+<view class="content">
+  <view class="search" style="position:relative">
+    <!--<image src="../../images/search.png" style="width:30rpx;height:30rpx;position:absolute;left:7px;top:6px;"></image>-->
+    <icon type="search"  style="width:30rpx;height:30rpx;position:absolute;left:3px;top:3px;"></icon>
+    <input placeholder="新闻搜索" style="font-size:28rpx;" placeholder-style="color:#c8c8c8"></input>
+  </view>
+  <swiper class="swiper" indicator-dots="true" duration="1000" interval="5000" autoplay="true">
+    <swiper-item wx:for="{{images}}">
+      <image src="{{item.value.pic}}"></image>
+    </swiper-item>
+  </swiper>
+    <swiper class="swiper" indicator-dots="true" duration="1000" interval="5000" autoplay="true">
+    <swiper-item wx:for="{{images}}">
+      <image src="{{item.value.pic}}"></image>
+    </swiper-item>
+  </swiper>
+
+  <block wx:for="{{list}}">
+  <view class="list" bindtouchend="onTouchend" bindtouchstart="onTouchstart">
+    <view class="info">
+      <view class="title" bindtap="onLoadNews" data-key="{{item.key}}">
+        {{item.value.title}}
+      </view>
+      <view class="text"><text wx:if="{{item.value.istop}}">置顶</text> <text wx:if="{{item.value.istop}}">专题</text> {{item.value.commentcount}}评</view>
+      <view wx:if="{{item.value.isfav!=1}}" bindtap="onFavorite" data-key="{{item.key}}" data-value="{{item.value}}" class="btn_favorite">收藏</view>
+      <view wx:if="{{item.value.isfav==1}}" bindtap="onFavorite" data-key="{{item.key}}" data-value="{{item.value}}" class="btn_favorite">取消收藏</view>
+    </view>
+    <image src="../../images/pic_1.png" bindtap="onLoadNews" data-key="{{item.key}}"></image>
+  </view>
+  </block>
+    
+</view>

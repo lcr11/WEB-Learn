@@ -1,0 +1,15 @@
+<view class="content">
+ <block wx:for="{{list}}" wx:key="{{index}}">
+  <view animation="{{item.value.animation}}" class="list" >
+    <view class="info">
+      <view class="title" bindtap="onLoadNews" data-key="{{item.key}}">
+        {{item.value.title}}
+      </view>
+      <view class="text"><text wx:if="{{item.value.istop}}">置顶</text> <text wx:if="{{item.value.istop}}">专题</text> {{item.value.commentcount}}评</view>
+      <view bindtap="onFavorite" data-key="{{item.key}}" data-value="{{item.value}}" class="btn_favorite">取消收藏</view>
+    </view>
+    <image src="../../images/pic_1.png" bindtap="onLoadNews" data-key="{{item.key}}"></image>
+  </view>
+  </block>
+    
+</view>

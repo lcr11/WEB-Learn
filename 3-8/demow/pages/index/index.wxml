@@ -1,0 +1,42 @@
+<view class="scrollview">
+  <scroll-view scroll-x="true" class="sc-nowrap">
+    <view class="menuitem current">要闻</view>
+    <view class="menuitem">要闻</view>
+    <view class="menuitem">要闻</view>
+    <view class="menuitem">要闻</view>
+      <view class="menuitem">要闻</view>
+    <view class="menuitem">要闻</view>
+    <view class="menuitem">要闻</view>
+      <view class="menuitem">要闻</view>
+    <view class="menuitem">要闻</view>
+    <view class="menuitem">要闻</view>
+      <view class="menuitem">要闻</view>
+    <view class="menuitem">要闻</view>
+    <view class="menuitem">要闻</view>
+  </scroll-view>
+</view>
+
+
+<view class="content">
+  <view class="search-box">
+     <input class="search" placeholder="新闻搜索" />
+  </view>
+  <swiper class="swiper" indicator-dots="true" duration="1000" interval="5000" autoplay="true">
+    <swiper-item wx:for="{{images}}">
+      <image src="{{item}}"></image>
+    </swiper-item>
+  </swiper>
+
+  <block wx:for="{{list}}">
+  <view class="list">
+    <view class="info">
+      <view class="title">
+        {{item.title}}
+      </view>
+      <view class="text"><text wx:if="{{item.istop}}">置顶</text> <text wx:if="{{item.istop}}">专题</text> {{item.commentcount}}评</view>
+    </view>
+    <image src="../../images/pic_1.png"></image>
+  </view>
+  </block>
+    
+</view>

@@ -1,0 +1,8 @@
+<view class="content">
+  <view class="title">{{desc.value.title}}</view>
+  <view class="info"><image src="{{desc.value.avatar}}" class="avatar"></image> <text class="author">{{desc.value.author}}</text> <text class="tiem">{{desc.value.time}}</text></view>
+  <image src="{{desc.value.cover}}" class="cover"></image>
+  <view clas="desc">
+    {{desc.value.desc}}
+   </view>
+</view>
