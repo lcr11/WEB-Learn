@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="stylesheet" type="text/css" href="css/style2.less"> -->
+	<link rel="stylesheet/less" type="text/css" href="css/style3.less">
+	<script src="js/less.min.js" type="text/javascript"></script>
+	<script src="http://yslp.qq.com/js/core/jquery.js"></script>
+	<script src="http://yslp.qq.com/js/core/velocity.js"></script>
+	<script src="http://yslp.qq.com/js/core/velocity.ui.js"></script>
+    <script src="http://yslp.qq.com/js/core/iscroll.4.25.js"></script>
+	<title>来！选出2015年你最爱的十部电影</title>
+</head>
+<body>
+	<div class="layout">
+		
+		<ul class="itembox">
+			<li class="item cover bg">
+				<div class="header">
+					<div class="mc logo"></div>
+					<a href="" class="mc btn_music"></a>
+				</div>
+				<section class="slogan">
+					<div class="title"></div>
+					<div class="wo"></div>
+					<div class="de"></div>
+					<div class="nian"></div>
+					<div class="du"></div>
+					<div class="shi"></div>
+					<div class="jia"></div>
+					<div class="dian"></div>
+					<div class="ying"></div>
+					<div class="line"></div>
+				</section>
+				<div class="conver_text aligncenter">
+					<p>专属定制你个人的年度十佳榜单</p>
+					<p>告诉大家，这一年</p>
+					<p>哪十部电影住进了你的心里？</p>
+				</div>
+				<div class="arrow"></div>
+				<div class="projector"></div>
+			</li>
+		</ul>
+		<div class="loading bg">
+			<div class="loading-logo position50"></div>
+			<div class="loading-text position50"><span>0%</span></div>
+		</div>
+
+	</div>
+<script type="text/javascript">
+	$(function(){
+		
+		var pics = ['css/btn_music.png','css/choose_btnslider.png','css/choose_iconheart.png','css/choose_liked.png','css/choose_list_bg.png','css/choose_title.png','css/cover_arrow.png','css/cover_de.png','css/cover_dian.png','css/cover_du.png','css/cover_jia.png','css/cover_line.png','css/cover_logo.png','css/cover_nian.png','css/cover_projector.png','css/cover_shi.png','css/cover_title.png','css/cover_wo.png','css/cover_ying.png','css/loading_logo.png','css/pic.png','css/pic2.png','css/result_again.png','css/result_mytop10btn.png','css/result_share_btn.png','css/result_title.png','css/result_titleta.png','css/share.jpg'],
+			len = pics.length,
+			aaa = 1,
+			index = 0
+		;
+
+		for(var i=0;i<len;i++){
+			var image = new Image();
+			image.src= pics[i];
+				console.log('for循环加载完成的下标:'+i);
+			image.onload = function(){
+				// console.log('第'+(index+1)+'张图片加载完成')
+				console.log(Math.floor(index/len*100));
+				var $loading_text = $('.loading-text');
+				$('span',$loading_text).text(Math.floor(index/len*100)+'%')
+				index++;
+				if(index == len){
+					console.log('100');
+					$('.loading-text span').text('100%');
+					$('.loading').velocity('transition.whirlOut',{complete:function(){
+							$('.cover').velocity('transition.fadeIn');
+						}
+					});
+				}
+			}
+		};
+	});
+</script>
+</body>
+</html>

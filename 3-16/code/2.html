@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="stylesheet" type="text/css" href="css/style2.less"> -->
+	<link rel="stylesheet/less" type="text/css" href="css/style3.less">
+	<script src="js/less.min.js" type="text/javascript"></script>
+	<script src="http://yslp.qq.com/js/core/jquery.js"></script>
+	<script src="http://yslp.qq.com/js/core/velocity.js"></script>
+	<script src="http://yslp.qq.com/js/core/velocity.ui.js"></script>
+    <script src="http://yslp.qq.com/js/core/iscroll.4.25.js"></script>
+	<title>来！选出2015年你最爱的十部电影</title>
+</head>
+<body>
+	<div class="layout">
+		
+		<ul class="itembox">
+			<li class="item cover bg">
+				<div class="header">
+					<div class="mc logo"></div>
+					<a href="" class="mc btn_music"></a>
+				</div>
+				<section class="slogan">
+					<div class="title"></div>
+					<div class="wo"></div>
+					<div class="de"></div>
+					<div class="nian"></div>
+					<div class="du"></div>
+					<div class="shi"></div>
+					<div class="jia"></div>
+					<div class="dian"></div>
+					<div class="ying"></div>
+					<div class="line"></div>
+				</section>
+				<div class="conver_text aligncenter">
+					<p>专属定制你个人的年度十佳榜单</p>
+					<p>告诉大家，这一年</p>
+					<p>哪十部电影住进了你的心里？</p>
+				</div>
+				<div class="arrow"></div>
+				<div class="projector"></div>
+			</li>
+			<li class="item choose">
+				<div class="header">
+					<a href="" class="mc btn_music"></a>
+				</div>
+				<div class="container">
+					<div class="title"></div>
+					<div class="choosed">
+						<i></i>
+						<span>0/10</span>
+					</div>
+					<div class="wrapper_list">
+						<ul>
+							<li>
+								<div class="movieitem ">
+									<img src="css/pic.png" alt="" class="ac_like">
+								</div>
+							</li>
+							<li>
+								<div class="movieitem ">
+									<img src="css/pic.png" alt="" class="ac_like">
+								</div>
+							</li>
+							<li>
+								<div class="movieitem ">
+									<img src="css/pic.png" alt="" class="ac_like">
+								</div>
+							</li>
+							<li>
+								<div class="movieitem ">
+									<img src="css/pic.png" alt="" class="ac_like">
+								</div>
+							</li>
+							<li>
+								<div class="movieitem ">
+									<img src="css/pic.png" alt="" class="ac_like">
+								</div>
+							</li>
+							<li>
+								<div class="movieitem ">
+									<img src="css/pic.png" alt="" class="ac_like">
+								</div>
+							</li>
+							<li>
+								<div class="movieitem ">
+									<img src="css/pic.png" alt="" class="ac_like">
+								</div>
+							</li>
+							<li>
+								<div class="movieitem ">
+									<img src="css/pic.png" alt="" class="ac_like">
+								</div>
+							</li>
+							<li>
+								<div class="movieitem ">
+									<img src="css/pic.png" alt="" class="ac_like">
+								</div>
+							</li>
+						</ul>
+					</div>
+					<script type="text/html" id="mask_choose"><div class="mask_choose ac_unlike"><img src="http://mat1.gtimg.com/yslp/shijiadianying/css/choose_liked.png" alt="like"></div></script>
+					<div class="more-tips"></div>
+					<div class="page">
+						
+					</div>
+					<script type="text/html" id="page"><a href="javascript:void(0);" class="dot"></a></script>
+				</div>
+				
+			</li>
+			<li class="item result">
+				<div class="title"></div>
+				<div class="subtitle"></div>
+				<div class="wrapper_list" id="wrapper">
+					<div id="scroller">
+						<ul class="clearfix">
+							<li>
+								<div class="movieitem">
+									<img src="css/pic.png" alt="">
+								</div>
+							</li>
+							<li>
+								<div class="movieitem">
+									<img src="css/pic.png" alt="">
+								</div>
+							</li>
+							<li>
+								<div class="movieitem">
+									<img src="css/pic.png" alt="">
+								</div>
+							</li>
+							<li>
+								<div class="movieitem">
+									<img src="css/pic.png" alt="">
+								</div>
+							</li>
+							<li>
+								<div class="movieitem">
+									<img src="css/pic.png" alt="">
+								</div>
+							</li>
+							<li>
+								<div class="movieitem">
+									<img src="css/pic.png" alt="">
+								</div>
+							</li>
+							<li>
+								<div class="movieitem">
+									<img src="css/pic.png" alt="">
+								</div>
+							</li>
+							<li>
+								<div class="movieitem">
+									<img src="css/pic.png" alt="">
+								</div>
+							</li>
+							<li>
+								<div class="movieitem">
+									<img src="css/pic.png" alt="">
+								</div>
+							</li>
+							<li>
+								<div class="movieitem">
+									<img src="css/pic.png" alt="">
+								</div>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+				<div class="result-btn dfas" data-mm="1">
+					
+				</div>
+				<div class="result_footer clearfix" style="display: none;">
+									<div class="rfooterleft"><a href="javascript:void(0)" class="btn_result_again ac_again"></a></div>
+									<div class="rfooterright"><a href="javascript:void(0)" class="btn_result ac_share"></a></div>
+								</div>
+				<!-- <div class="result_footer_ta">
+									<a href="javascript:void(0)" class="btn_result btn_result_ta velocity-animating" style="transform: scale(1.0727) translate3d(0px, 0px, 0px);"></a>
+								</div> -->
+			</li>
+		</ul>
+		<div class="loading bg">
+			<div class="loading-logo position50"></div>
+			<div class="loading-text position50"><span>0%</span></div>
+		</div>
+
+	</div>
+	<audio src="http://mat1.gtimg.com/yslp/shijiadianying/css/bgm_1.mp3" id="sha" loop="true"></audio>
+	<audio src="http://mat1.gtimg.com/yslp/shijiadianying/css/bgm_ca.mp3" id="ca" ></audio>
+<script type="text/javascript">
+	$(function(){
+		
+		var pics = ['css/btn_music.png','css/choose_btnslider.png','css/choose_iconheart.png','css/choose_liked.png','css/choose_list_bg.png','css/choose_title.png','css/cover_arrow.png','css/cover_de.png','css/cover_dian.png','css/cover_du.png','css/cover_jia.png','css/cover_line.png','css/cover_logo.png','css/cover_nian.png','css/cover_projector.png','css/cover_shi.png','css/cover_title.png','css/cover_wo.png','css/cover_ying.png','css/loading_logo.png','css/pic.png','css/pic2.png','css/result_again.png','css/result_mytop10btn.png','css/result_share_btn.png','css/result_title.png','css/result_titleta.png','css/share.jpg'],
+			len = pics.length,
+			aaa = 1,
+			index = 0
+		;
+		var timer = null;
+		for(var i=0;i<len;i++){
+			var image = new Image();
+			image.src= pics[i];
+				// console.log('for循环加载完成的下标:'+i);
+			image.onload = function(){
+				// console.log('第'+(index+1)+'张图片加载完成')
+				// console.log(Math.floor(index/len*100));
+				var $loading_text = $('.loading-text');
+				$('span',$loading_text).text(Math.floor(index/len*100)+'%')
+				index++;
+				if(index == len){
+					// console.log('100');
+					$('.loading-text span').text('100%');
+					$('.loading').velocity('transition.whirlOut',{complete:function(){
+							$('.cover').velocity('transition.fadeIn',{complete:function(){
+								timer=setInterval(function(){
+								   $('.wo,.de,.nian,.du,.shi,.jia,.dian,.ying').velocity({'translateY':'5px',},{duration:400,complete:function(targ){
+								$(targ).velocity({translateY:'-5px'},{duration:400});
+								}});
+								},810);
+								$('#sha').get(0).play();
+							}});
+						}
+					});
+				}
+			}
+		};
+		var pageY = [],
+			win_width = $(window).width(),
+			win_height = $(window).height(),
+			data = {
+			'1':{movieid:1,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/1cknyn.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/1cknyn.jpg',moviename:'刺客聂隐娘'},
+			'2':{movieid:2,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/2shgr.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/2shgr.jpg',moviename:'山河故人'},
+			'3':{movieid:3,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/3lrzx.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/3lrzx.jpg',moviename:'烈日灼心'},
+			'4':{movieid:4,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/4lp.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/4lp.jpg',moviename:'老炮儿'},
+			'5':{movieid:5,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/5xltfn.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/5xltfn.jpg',moviename:'夏洛特烦恼'},
+			'6':{movieid:6,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/6jbx.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/6jbx.jpg',moviename:'煎饼侠'},
+			'7':{movieid:7,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/7dsgl.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/7dsgl.jpg',moviename:'西游记之大圣归来'},
+			'8':{movieid:8,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/8spl2.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/8spl2.jpg',moviename:'杀破狼2'},
+			'9':{movieid:9,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/9wdsnsd.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/9wdsnsd.jpg',moviename:'我的少女时代'},
+			'10':{movieid:10,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/10crz.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/10crz.jpg',moviename:'闯入者'},
+			'11':{movieid:11,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/11gdbzlj.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/11gdbzlj.jpg',moviename:'滚蛋吧！肿瘤君'},
+			'12':{movieid:12,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/12xmg.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/12xmg.jpg',moviename:'心迷宫'},
+			'13':{movieid:13,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/13jjwxs.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/13jjwxs.jpg',moviename:'解救吾先生'},
+			'14':{movieid:14,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/14ygsz.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/14ygsz.jpg',moviename:'一个勺子'},
+			'15':{movieid:15,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/15pf.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/15pf.jpg',moviename:'破风'},
+			'16':{movieid:16,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/16zyj.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/16zyj.jpg',moviename:'捉妖记'},
+			'17':{movieid:17,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/17cfc.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/17cfc.jpg',moviename:'冲锋车'},
+			'18':{movieid:18,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/18nn.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/18nn.jpg',moviename:'念念'},
+			'19':{movieid:19,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/19zl.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/19zl.jpg',moviename:'战狼'},
+			'20':{movieid:20,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/20kadn.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/20kadn.jpg',moviename:'可爱的你'},
+			'21':{movieid:21,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/21jzscfmddd.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/21jzscfmddd.jpg',moviename:'家在水草丰茂的地方'},
+			'22':{movieid:22,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/22zsms.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/22zsms.jpg',moviename:'醉·生梦死'},
+			'23':{movieid:23,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/23txxm.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/23txxm.jpg',moviename:'踏血寻梅'},
+			'24':{movieid:24,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/24tl.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/24tl.jpg',moviename:'塔洛'},
+			'25':{movieid:25,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/25brgb.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/25brgb.jpg',moviename:'百日告别'},
+			'26':{movieid:26,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/26sf.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/26sf.jpg',moviename:'师父'},
+			'27':{movieid:27,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/27lbyc.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/27lbyc.jpg',moviename:'路边野餐'},
+			'28':{movieid:28,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/28nytwmhf.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/28nytwmhf.jpg',moviename:'哪一天我们会飞'},
+			'29':{movieid:29,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/29ltt.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/29ltt.jpg',moviename:'狼图腾'},
+			'30':{movieid:30,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/30segm.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/30segm.jpg',moviename:'十二公民'},
+			'31':{movieid:31,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/31wslrj.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/31wslrj.jpg',moviename:'我是路人甲'},
+			'32':{movieid:32,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/32xlj.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/32xlj.jpg',moviename:'寻龙诀'},
+			'33':{movieid:33,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/33madmax.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/33madmax.jpg',moviename:'疯狂的麦克斯4'},
+			'34':{movieid:34,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/34wptg.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/34wptg.jpg',moviename:'王牌特工'},
+			'35':{movieid:35,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/35dzd5.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/35dzd5.jpg',moviename:'碟中谍5：神秘国度'},
+			'36':{movieid:36,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/36fczlm.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/36fczlm.jpg',moviename:'复仇者联盟2'},
+			'37':{movieid:37,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/37zljsj.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/37zljsj.jpg',moviename:'侏罗纪世界'},
+			'38':{movieid:38,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/38yr.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/38yr.jpg',moviename:'蚁人'},
+			'39':{movieid:39,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/39xqdz.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/39xqdz.jpg',moviename:'星球大战：原力觉醒'},
+			'40':{movieid:40,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/40hxjy.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/40hxjy.jpg',moviename:'火星救援'},
+			'41':{movieid:41,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/41mmtg.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/41mmtg.jpg',moviename:'秘密特工'},
+			'42':{movieid:42,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/42sdyjq.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/42sdyjq.jpg',moviename:'速度与激情7'},
+			'43':{movieid:43,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/43sc.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/43sc.jpg',moviename:'失常'},
+			'44':{movieid:44,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/44tntgd.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/44tntgd.jpg',moviename:'头脑特工队'},
+			'45':{movieid:45,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/45kldj.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/45kldj.jpg',moviename:'恐龙当家'},
+			'46':{movieid:46,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/46xwz.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/46xwz.jpg',moviename:'小王子'},
+			'47':{movieid:47,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/47xyxe.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/47xyxe.jpg',moviename:'小羊肖恩'},
+			'48':{movieid:48,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/48zccf.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/48zccf.jpg',moviename:'再次出发'},
+			'49':{movieid:49,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/49jdzq.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/49jdzq.jpg',moviename:'间谍之桥'},
+			'50':{movieid:50,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/50njd.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/50njd.jpg',moviename:'女间谍'},
+			'51':{movieid:51,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/51jxj.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/51jxj.jpg',moviename:'机械姬'},
+			'52':{movieid:52,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/52kle.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/52kle.jpg',moviename:'卡罗尔'},
+			'53':{movieid:53,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/53ber.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/53ber.jpg',moviename:'八恶人'},
+			'54':{movieid:54,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/54dkt.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/54dkt.jpg',moviename:'大空头'},
+			'55':{movieid:55,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/55nzd.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/55nzd.jpg',moviename:'脑震荡'},
+			'56':{movieid:56,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/56mkb.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/56mkb.jpg',moviename:'麦克白'},
+			'57':{movieid:57,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/57hylr.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/57hylr.jpg',moviename:'荒野猎人'},
+			'58':{movieid:58,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/58room1.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/58room1.jpg',moviename:'房间'},
+			'59':{movieid:59,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/59blse.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/59blse.jpg',moviename:'布鲁克林'},
+			'60':{movieid:60,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/60lx.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/60lx.jpg',moviename:'龙虾'},
+			'61':{movieid:61,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/61jj.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/61jj.jpg',moviename:'聚焦'},
+			'62':{movieid:62,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/62sdfqbs.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/62sdfqbs.jpg',moviename:'史蒂夫·乔布斯'},
+			'63':{movieid:63,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/63fddqy.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/63fddqy.jpg',moviename:'奋斗的乔伊'},
+			'64':{movieid:64,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/64wheeyjjsdnh.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/64wheeyjjsdnh.jpg',moviename:'我和厄尔以及将死的女孩'},
+			'65':{movieid:65,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/65femsxs.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/65femsxs.jpg',moviename:'福尔摩斯先生'},
+			'66':{movieid:66,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/66wsdh.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/66wsdh.jpg',moviename:'五十度灰'},
+			'67':{movieid:67,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/67zezj.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/67zezj.jpg',moviename:'罪恶之家'},
+			'68':{movieid:68,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/68xbe.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/68xbe.jpg',moviename:'性本恶'},
+			'69':{movieid:69,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/69dmnh.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/69dmnh.jpg',moviename:'丹麦女孩'},
+			'70':{movieid:70,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/70nqqs.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/70nqqs.jpg',moviename:'年轻气盛'},
+			'71':{movieid:71,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/71cckpd.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/71cckpd.jpg',moviename:'冲出康普顿'},
+			'72':{movieid:72,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/72tzsh.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/72tzsh.jpg',moviename:'它在身后'},
+			'73':{movieid:73,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/73js.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/73js.jpg',moviename:'橘色'},
+			'74':{movieid:74,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/74bjss.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/74bjss.jpg',moviename:'边境杀手'},
+			'75':{movieid:75,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/75fnczlz.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/75fnczlz.jpg',moviename:'妇女参政论者'},
+			'76':{movieid:76,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/76yzxz.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/76yzxz.jpg',moviename:'云中行走'},
+			'77':{movieid:77,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/77al.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/77al.jpg',moviename:'爱恋'},
+			'78':{movieid:78,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/78xlldhsds.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/78xlldhsds.jpg',moviename:'小萝莉的猴神大叔'},
+			'79':{movieid:79,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/79-007yld.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/79-007yld.jpg',moviename:'007：幽灵党'},
+			'80':{movieid:80,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/80jlls2.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/80jlls2.jpg',moviename:'精灵旅社2'},
+			'81':{movieid:81,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/81xsl.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/81xsl.jpg',moviename:'小森林'},
+			'82':{movieid:82,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/82byzl.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/82byzl.jpg',moviename:'百元之恋'},
+			'83':{movieid:83,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/83yrj.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/83yrj.jpg',moviename:'愚人节'},
+			'84':{movieid:84,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/84ddlm.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/84ddlm.jpg',moviename:'垫底辣妹'},
+			'85':{movieid:85,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/85hjrj.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/85hjrj.jpg',moviename:'海街日记'},
+			'86':{movieid:86,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/86as.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/86as.jpg',moviename:'暗杀'},
+			'87':{movieid:87,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/87sd.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/87sd.jpg',moviename:'思悼'},
+			'88':{movieid:88,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/88nzm.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/88nzm.jpg',moviename:'内在美'},
+			'89':{movieid:89,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/89ls.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/89ls.jpg',moviename:'老手'},
+			'90':{movieid:90,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/90gjsc.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/90gjsc.jpg',moviename:'国际市场'}
+			},
+			arr_like = [],
+			count = 90,
+			pages = count/9
+		;
+		var pager={};
+		pager.pages =  count/9
+		for(i=0;i<pager.pages;i++){
+			$('.page').append($('#page').html());
+		}
+		$('.page a.dot').eq(0).addClass('current');
+		$('.choose .container').velocity({rotateZ:'-10deg'});
+		$('.choose ul li').velocity({rotateZ:'-5deg',translateY:'5px',opacity:'0'});
+		$('body').on('touchstart','.cover',function(){
+			pageY = [];
+		});
+		$('body').on('touchmove','.cover',function(e){
+			// console.log(e);
+			pageY.push(e.originalEvent.touches[0].pageY);
+		});
+		$('body').on('touchend','.cover',function(){
+			// console.log(pageY);
+			if(pageY[pageY.length-1]<pageY[0]){
+				// console.log(1);
+				clearInterval(timer);
+				$('.wo').velocity('stop').velocity({translateY:-win_height,translateX:-win_width});
+				$('.de').velocity('stop').velocity({translateY:-win_height,translateX:0})
+				$('.nian').velocity('stop').velocity({translateY:-win_height,translateX:0})
+				$('.du').velocity('stop').velocity({translateY:-win_height,translateX:win_width})
+				$('.shi').velocity('stop').velocity({translateY:win_height,translateX:-win_width})
+				$('.jia').velocity('stop').velocity({translateY:win_height,translateX:0})
+				$('.dian').velocity('stop').velocity({translateY:win_height,translateX:0})
+				$('.ying').velocity('stop').velocity({translateY:win_height,translateX:win_width},{complete:function(){
+					$('.cover').velocity('transition.fadeOut',{complete:function(){
+						$('.choose').velocity('transition.fadeIn',{complete:function(){
+								$('.choose .container').velocity({rotateZ:'0deg'},{complete:function(){
+									$('.choose .title').velocity('transition.fadeIn');
+									var delay_time = 0
+									$('.choose ul li').each(function(index,item){
+										$(item).find('img').attr('src',data[index+1]['pic']);
+										$(item).velocity({rotateZ:'0deg',translateY:'0px',opacity:'1'},{delay:delay_time})
+										delay_time+=200;
+										$(item).data('movieid',data[index+1]['movieid'])
+										// console.log(data[index+1]['movieid'])
+									});
+								}});
+
+						}});
+					}});
+					$('#sha').get(0).pause();
+					$('#ca').get(0).play();
+				}})
+
+			}
+		});
+		$('body').on('click','.ac_like',function(){
+			var $t = $(this),
+				movieid  = $t.closest('li').data('movieid')
+			;
+			$t.closest('.movieitem').prepend($('#mask_choose').html());
+			if($.inArray(movieid,arr_like)<0){
+				arr_like.push(movieid);
+			}
+			// console.log(arr_like)
+		});
+		$('body').on('click','.ac_unlike',function(){
+			var $t = $(this),
+				movieid  = $t.closest('li').data('movieid'),
+				i = $.inArray(movieid,arr_like)
+			;
+			$t.remove();
+			if(i>=0){
+				arr_like.splice(i,1);
+			}
+			// console.log(arr_like)
+		});
+		
+		$('body').on('click','.dot',function(){
+			// console.log(pager)
+			var $t = $(this),
+				delay_time = 0
+			;
+			pager.p = $t.index();
+			$('.choose ul li').each(function(index,item){
+				movieid = data[pager.p*9+index+1]['movieid'];
+				// if(pager.p*9+index+1>count) return;
+				$(item).find('img').attr('src',data[pager.p*9+index+1]['pic']);
+				$(item).velocity({rotateZ:'0deg',translateY:'0px',opacity:'1'},{delay:delay_time})
+				delay_time+=200;
+				$(item).data('movieid',movieid)
+				console.log($(item).data('movieid'))
+				console.log(arr_like)
+				// console.log($.inArray(movieid,arr_like))
+					$('.mask_choose').remove();
+				if($.inArray(movieid,arr_like)==-1){
+					$('.mask_choose').remove();
+				}
+				if($.inArray(movieid,arr_like)>-1){
+					$(item).find('img.ac_like').click();
+					// console.log($(item).find('img.ac_like'))
+				}
+			});
+			if($t.prev().hasClass('current')){
+				$('.choose ul').velocity('transition.slideRightBigIn')
+			}
+			if($t.next().hasClass('current')){
+				$('.choose ul').velocity('transition.slideLeftBigIn')
+			}
+			$t.addClass('current').siblings().removeClass('current')
+
+		});
+		var pageX = [];
+		$('body').on('touchstart','.choose',function(e){
+			pageX = []
+		});
+		$('body').on('touchmove','.choose',function(e){
+			// console.log(e);
+			
+			pageX.push(e.originalEvent.touches[0].pageX);
+		});
+		$('body').on('touchend','.choose',function(){
+			// console.log(pageX);
+			if(pageX[pageX.length-1]<pageX[0]+50){
+				// console.log('left');
+				$('.dot.current').next().click();
+				
+
+			}
+			if(pageX[pageX.length-1]>pageX[0]+50){
+				// console.log('right');
+				$('.dot.current').prev().click();
+				
+
+			}
+		});
+		// $('.cover').click(function(){
+		// 	$(this).velocity('transition.fadeOut',{complete:function(){
+		// 		$('.choose').velocity('transition.fadeIn')
+		// 	}})
+		// });
+		// $('.choose').click(function(){
+		// 	$(this).velocity('transition.fadeOut',{complete:function(){
+		// 		$('.result').velocity('transition.fadeIn')
+		// 	}})
+		// });
+		var myscroll;
+		function loaded(){
+			myscroll = new iScroll('wrapper',{ checkDOMChanges: true });
+		}
+		window.addEventListener('DOMContentLoaded',loaded,false);
+		
+
+	});
+</script>
+</body>
+</html>

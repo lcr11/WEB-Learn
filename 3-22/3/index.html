@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title>奇葩灯谜会</title>
+
+<script src="js/easeljs.min.js"></script>
+<script src="js/tweenjs.min.js"></script>
+<script src="js/movieclip.min.js"></script>
+<script src="js/soundjs.min.js"></script>
+<script src="js/preloadjs.min.js"></script>
+<script src="index.js"></script>
+<!-- <script src="http://mat1.gtimg.com/www/js/newsapp/jsapi/news.js?_tsid=1"></script> -->
+<!-- <script type="text/javascript" src="http://tajs.qq.com/stats?sId=39983811" charset="UTF-8"></script> -->
+<style>
+html,body{margin:0; padding:0; overflow:hidden; width:100%; height:100%;}
+#canvas{position:absolute; left:0; top:0; width:100%; height:100%;}
+</style>
+<script>
+window.score = 0;
+window.selected = 0;
+var canvas, stage, exportRoot,scale,ww,wh,myW,myH,images,touchPoint;
+function init() {
+	// 按照宽高比屏幕缩放
+	canvas = document.getElementById("canvas");
+	ww = window.innerWidth;
+	wh = window.innerHeight;
+	screenscale = ww/wh
+	scale=640/1136;
+	canvas.style.width = ww+'px';
+	canvas.style.height= ww/scale+'px';
+	if(screenscale>scale){
+		canvas.style.top= -(ww/scale-wh)/2+'px';
+		// todo
+	}
+	
+	images = images||{};
+	touchPoint=new Object();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("progress", progressHandler);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+}
+
+function progressHandler(evt){
+	console.log(evt.loaded);
+	// if(evt.loaded<1){
+	// 	loadtxt.innerHTML=Math.round(evt.loaded*100)+"%";
+	// }else{
+	// 	loadtxt.innerHTML="99%";
+	// 	loadtxt.style.display="none";
+	// 	loadingback.style.display="none";
+	// }
+	
+}
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete(evt) {
+	exportRoot = new lib.index();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+}
+</script>
+</head>
+
+<body style="background-color:#f5bb71" onload="init();">
+	<canvas id="canvas" width="640" height="1136"></canvas>
+</body>
+<script type="text/javascript">
+</script>
+</html>

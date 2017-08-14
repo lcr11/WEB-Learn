@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<!-- <link rel="stylesheet" type="text/css" href="css/style2.less"> -->
+	<link rel="stylesheet/less" type="text/css" href="css/style2.less">
+	<script src="js/less.min.js" type="text/javascript"></script>
+	<script src="http://yslp.qq.com/js/core/jquery.js"></script>
+	<script src="http://yslp.qq.com/js/core/velocity.js"></script>
+	<script src="http://yslp.qq.com/js/core/velocity.ui.js"></script>
+	<script src="http://yslp.qq.com/guichuideng/js/jquery.am.js"></script>
+    <script src="http://yslp.qq.com/guanggunjie/js/jquery.popup.js"></script>
+    <script src="http://yslp.qq.com/js/core/iscroll.4.25.js"></script>
+	<title>来！选出2015年你最爱的十部电影</title>
+</head>
+<body>
+<div class="layout">
+	<div class="list">
+		<ul class="itembox">
+			<li class="item cover">
+				<section class="header">
+					<div class="logo"></div>
+					<a href="javascript:void(0)" class="btn_music"></a>
+				</section>
+				<section class="slogan">
+					<div class="title"></div>
+					<div class="wo"></div>
+					<div class="de"></div>
+					<div class="nian"></div>
+					<div class="du"></div>
+					<div class="shi"></div>
+					<div class="jia"></div>
+					<div class="dian"></div>
+					<div class="ying"></div>
+					<div class="line"></div>
+				</section>
+				<section class="text">
+					<p>专属定制你个人的年度十佳榜单</p>
+					<p>告诉大家，这一年</p>
+					<p>哪十部电影住进了你的心里？</p>
+				</section>
+				<section class="footer">
+					<div class="arrow"></div>
+				</section>
+				<section class="projector_box">
+					<div class="projector"></div>
+				</section>
+			</li>
+		</ul>
+	</div>
+	<div class="loading">
+		<div class="position50">
+			<div class="loading-logo"></div>
+			<div class="loading-text">5%</div>
+		</div>
+
+	</div>
+</div>
+<script type="text/javascript">
+;$(function(){
+	//scale
+	var autoScale = function(target) {
+		$target = $(target);
+		var ratio = 320/520, //视觉稿宽高比，使用iphone5的大小减掉tabbar
+		winW = document.documentElement.clientWidth,
+		winH = document.documentElement.clientHeight,
+		ratio2 = winW/winH,
+		scale,
+		cssText='';
+		if (ratio < ratio2) {
+			scale = (winH/520).toString().substring(0, 6);
+			cssText = '-webkit-transform: scale('+ scale +'); -webkit-transform-origin:center center;transform: scale('+ scale +'); transform-origin:center center;';
+		} else {
+			scale = (winW/320).toString().substring(0, 6);
+			cssText = '-webkit-transform: scale('+ scale +'); -webkit-transform-origin:center center;transform: scale('+ scale +'); transform-origin:center center;';
+		}
+		$target.attr('style', cssText);
+		window.tr_scale = scale;
+	};
+	// setTimeout(function() {
+		// autoScale('.tr_scale');
+	// }, 300);
+	$(document).on("touchmove",'body', function(event) {
+	    event.preventDefault();
+	});
+	var $loading = $('.loading'),
+		$cover = $('.cover'),
+		$choose_list = $('.choose_list'),
+		$result = $('.result') ,
+		$itembox = $('.itembox'),
+		w_h = $(window).height(),
+		w_w = $(window).width(),
+		$projector = $('.projector'),
+		arr_like = [],
+		$page_icon = $('.page_icon'),
+		choose_page = $('#page').html(),
+		data = {
+			'1':{movieid:1,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/1cknyn.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/1cknyn.jpg',moviename:'刺客聂隐娘'},
+			'2':{movieid:2,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/2shgr.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/2shgr.jpg',moviename:'山河故人'},
+			'3':{movieid:3,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/3lrzx.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/3lrzx.jpg',moviename:'烈日灼心'},
+			'4':{movieid:4,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/4lp.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/4lp.jpg',moviename:'老炮儿'},
+			'5':{movieid:5,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/5xltfn.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/5xltfn.jpg',moviename:'夏洛特烦恼'},
+			'6':{movieid:6,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/6jbx.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/6jbx.jpg',moviename:'煎饼侠'},
+			'7':{movieid:7,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/7dsgl.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/7dsgl.jpg',moviename:'西游记之大圣归来'},
+			'8':{movieid:8,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/8spl2.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/8spl2.jpg',moviename:'杀破狼2'},
+			'9':{movieid:9,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/9wdsnsd.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/9wdsnsd.jpg',moviename:'我的少女时代'},
+			'10':{movieid:10,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/10crz.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/10crz.jpg',moviename:'闯入者'},
+			'11':{movieid:11,pic:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/11gdbzlj.jpg',pic_result:'http://mat1.gtimg.com/yslp/shijiadianying/css/movie/11gdbzlj.jpg',moviename:'滚蛋吧！肿瘤君'}
+		},
+		count = 90,
+		pages = count/9
+	;
+	//分页
+	for(var i = 0;i<pages;i++){
+		$page_icon.append(choose_page).find('a').eq(0).addClass('current');
+	}
+	//
+	$('.slogan',$cover).css('margin-left',-(w_w/2-10));
+	/**
+	 * loadImg  图片预加载
+	 */
+	var loadImg = function(pics, callback){
+	    var index = 0;
+	    var len = pics.length;
+	    var img = new Image();
+	    var flag = false;
+	    var progress = function(w){
+	        // console.log(w)
+	        $('.loadingtext span').html(w);
+	    }
+	    var load = function(){
+	        img.src = pics[index];
+	        // alert(index)
+	        img.onload = function() {
+	        // alert(index)
+	            // 控制台显示加载图片信息
+	            progress(Math.floor(((index + 1) / len) * 100));
+	            index ++ ;
+	            if (index < len) {
+	                load();
+	            }else{
+	                callback()
+	            }
+	        }
+	        return img;
+	    }
+	    if(len > 0){
+	        load();
+	    }else{
+	        progress("100");
+	    }
+	    return {
+	        pics: pics,
+	        load: load,
+	        progress: progress
+	    };
+	}
+	// 获取链接参数
+	function GetUrlPars(){
+	    var url=location.search;
+	    var theRequest = new Object();
+	    if(url.indexOf("?")!=-1){
+	       var str = url.substr(1);
+	       strs = str.split("&");
+	       for(var i=0;i<strs.length;i++){
+	          var sTemp = strs[i].split("=");
+	          theRequest[sTemp[0]]=(sTemp[1]);
+	        }
+	    }
+	    return theRequest;
+	}
+	var url_obj = GetUrlPars();
+	// console.log(url_obj);
+	var pics = ['http://mat1.gtimg.com/yslp/shijiadianying/css/btn_music.png','http://mat1.gtimg.com/yslp/shijiadianying/css/choose_btnslider.png','http://mat1.gtimg.com/yslp/shijiadianying/css/choose_iconheart.png','http://mat1.gtimg.com/yslp/shijiadianying/css/choose_liked.png','http://mat1.gtimg.com/yslp/shijiadianying/css/choose_list_bg.png','http://mat1.gtimg.com/yslp/shijiadianying/css/choose_title.png','http://mat1.gtimg.com/yslp/shijiadianying/css/cover_arrow.png','http://mat1.gtimg.com/yslp/shijiadianying/css/cover_de.png','http://mat1.gtimg.com/yslp/shijiadianying/css/cover_dian.png','http://mat1.gtimg.com/yslp/shijiadianying/css/cover_du.png','http://mat1.gtimg.com/yslp/shijiadianying/css/cover_jia.png','http://mat1.gtimg.com/yslp/shijiadianying/css/cover_line.png','http://mat1.gtimg.com/yslp/shijiadianying/css/cover_logo.png','http://mat1.gtimg.com/yslp/shijiadianying/css/cover_nian.png','http://mat1.gtimg.com/yslp/shijiadianying/css/cover_projector.png','http://mat1.gtimg.com/yslp/shijiadianying/css/cover_shi.png','http://mat1.gtimg.com/yslp/shijiadianying/css/cover_title.png','http://mat1.gtimg.com/yslp/shijiadianying/css/cover_wo.png','http://mat1.gtimg.com/yslp/shijiadianying/css/cover_ying.png','http://mat1.gtimg.com/yslp/shijiadianying/css/loading_logo.png','http://mat1.gtimg.com/yslp/shijiadianying/css/pic.png','http://mat1.gtimg.com/yslp/shijiadianying/css/pic2.png','http://mat1.gtimg.com/yslp/shijiadianying/css/result_again.png','http://mat1.gtimg.com/yslp/shijiadianying/css/result_mytop10btn.png','http://mat1.gtimg.com/yslp/shijiadianying/css/result_share_btn.png','http://mat1.gtimg.com/yslp/shijiadianying/css/result_title.png','http://mat1.gtimg.com/yslp/shijiadianying/css/result_titleta.png','http://mat1.gtimg.com/yslp/shijiadianying/css/share.jpg'];
+	// $.each(data,function(index,item){
+	// 	pics.push(item.pic);
+	// });
+	// console.log(pics)
+	// 图片预加载
+	var timer_cover = null;
+	loadImg(pics,function(){
+		// $('.loading').velocity('transition.whirlOut',{complete:function(){
+		// 	if(url_obj.result){
+		// 		$('.title',$result).addClass('title_ta');
+		// 		$('.result_footer',$result).hide().next().show();
+		// 		// $result.velocity('transition.fadeIn');
+		// 		var result_arr = url_obj.result.split('_');
+		// 		var time_resultli = 0;
+		// 		$('.result ul li').each(function(index,item){
+		// 			var $item = $(item);
+		// 			var result = result_arr[index],
+		// 				result_obj = data[result]
+		// 			;
+		// 			$item.find('img').attr('src',result_obj.pic_result);
+		// 			$item.find('.moviename').text(result_obj.moviename);
+		// 			// $item.velocity('transition.slideRightIn',{delay:time_resultli+=500});
+		// 			// $item.velocity('transition.fadeIn',{delay:time_resultli});
+		// 			time_resultli+=200;
+		// 			// console.log(time_resultli)
+		// 		});
+		// 		$result.velocity('transition.fadeIn');
+		// 		$('.btn_result_ta').velocity({scale:1.1},{loop:true});
+		// 	}else{
+		// 		$('.title',$result).removeClass('title_ta');
+		// 		$('.result_footer',$result).show().next().hide();
+		// 		$('.cover').velocity('transition.fadeIn',{complete:function(){
+		// 			timer_cover = setInterval(function(){
+		// 				$('.slogan').velocity({translateY:'2px'},{duration: 300,complete:function(targ){
+		// 					$(targ).velocity('reverse',{duration:300});
+		// 				}});
+		// 				$('.arrow',$cover).velocity({translateY:'2px'},{duration: 310,complete:function(targ){
+		// 					$(targ).velocity('reverse',{duration:310});
+		// 				}});
+		// 			},650);
+		// 			// $('#bg_music_1').get(0).play();
+		// 			$projector.framesAnimation({keyframes:21,duration:400,time:100,class_head:'projector',rounder:1000,callback:function(){}});
+		// 			// $projector.framesAnimation({keyframes:11,duration:6000,time:100,class_head:'y',rounder:1000});
+		// 		}});
+		// 	}
+		// }});
+	});
+	$('.ac_again').click(function(){
+		clearInterval(timer_cover);
+		clearInterval(timer_choose);
+		$(document).velocity('stop');
+		arr_like = [];
+		$('.page_icon a').removeClass('current').eq(0).addClass('current');
+		$('.page span.count',$choose_list).text('0');
+		$result.velocity('transition.fadeOut',{complete:function(){
+			$choose_list.find('li').each(function(index,item){
+				var $item = $(item);
+				var choose_obj = data[(index+1)]
+				;
+				// console.log((index+1)+current_page*9);
+				// console.log(choose_obj);
+				$item.find('a.ac_like img').attr('src',choose_obj.pic);
+				$item.find('a.ac_like').data('movieid',choose_obj.movieid);
+				$item.find('.moviename').text(choose_obj.moviename);
+				$item.find('.ac_unlike').remove();
+				
+			});
+			$choose_list.velocity('transition.fadeIn',{complete:function(targ){
+				// __show_choose();
+
+			}});
+		}});
+	});
+	// 生成我的十佳电影
+	$('.btn_result_ta').on('click',function(){
+		$result.velocity('transition.fadeOut',{complete:function(){
+			$('.title',$result).removeClass('title_ta');
+			$('.result_footer',$result).show().next().hide();
+			$('.cover').velocity('transition.fadeIn',{complete:function(){
+				timer_cover = setInterval(function(){
+					$('.slogan').velocity({translateY:'2px'},{duration: 300,complete:function(targ){
+						$(targ).velocity('reverse',{duration:300});
+					}});
+					$('.arrow',$cover).velocity({translateY:'2px'},{duration: 310,complete:function(targ){
+						$(targ).velocity('reverse',{duration:310});
+					}});
+				},650);
+				// $('#bg_music_1').get(0).play();
+				$projector.framesAnimation({keyframes:21,duration:400,time:100,class_head:'projector',rounder:1000,callback:function(){}});
+				// $projector.framesAnimation({keyframes:11,duration:6000,time:100,class_head:'y',rounder:1000});
+			}});
+			// __show_choose();
+		}});
+	});
+	// .tap(function(){
+		
+	// });
+	//声音控制
+	$('.ac_ctrlaudio').click(function(){
+		if($('#bg_music').data('playaudio')){
+			$('#bg_music').data('playaudio',false).get(0).pause();
+			// $('#bg_music_1').data('playaudio',false).get(0).pause();
+			$(this).removeClass('btn_music_am');
+
+		}else{
+			$('#bg_music').data('playaudio',true).get(0).play();
+			$(this).addClass('btn_music_am');
+			// $('#bg_music_1').data('playaudio',true).get(0).play();
+		}
+	});
+	$('.container',$choose_list).velocity({rotateZ:'-7deg',translateY:'50px'});
+	$('ul li',$choose_list).velocity({rotateZ:'-2deg',translateY:'50px'});
+	//1pge向上滑动翻屏操作
+	var movey = [];
+	$('body').on('touchstart','li.cover',function(e){
+	    movex = [];
+	    movey = [];
+	});
+	$('body').on('touchmove','li.cover',function(e){
+	    movey.push(e.originalEvent.touches[0].pageY);
+	});
+	$('body').on('touchend','li.cover',function(e){
+	    var $t = $(e.target);
+	    if(movey[movey.length-1]<movey[0]){
+	    	// $('#bg_music_ca').get(0).play();
+	        $cover.velocity('transition.fadeOut',{complete:function(){
+	        	$choose_list.velocity('transition.fadeIn');
+	        	__show_choose();
+	        }});
+	        // $('.wo',$cover).velocity({'margin':-(w_h/2)+' 0 0 '+(-(w_w/2))},{duration:1000});
+	        // $('.de',$cover).velocity({'margin':-(w_h/2)+' 0 0 0'},{duration:1000});
+	        // $('.nian',$cover).velocity({'margin':-(w_h/2)+' 0 0 0'},{duration:1000});
+	        // $('.du',$cover).velocity({'margin':-(w_h)/2+' '+(-(w_w/2))+' 0 0'},{duration:1000});
+	        // $('.shi',$cover).velocity({'margin':'0 0 '+w_h/2+' '+w_w/2},{duration:1000});
+	        // $('.jia',$cover).velocity({'margin':'0 0 '+w_h/2+' 0'},{duration:1000});
+	        // $('.dian',$cover).velocity({'margin':'0 0 '+w_h/2+' 0'},{duration:1000});
+	        // $('.ying',$cover).velocity({'margin':'0 '+w_w/2+' '+w_h/2+' 0'},{duration:1000});
+	        // $('.wo',$cover).velocity({'margin':'-100px 0 0 -100px'},{duration:1000});
+	        // $('.de',$cover).velocity({'margin':'-100px 0 0 0'},{duration:1000});
+	        // $('.nian',$cover).velocity({'margin':'-100px 0 0 0'},{duration:1000});
+	        // $('.du',$cover).velocity({'margin':'-100px -100px 0 0'},{duration:1000});
+	        // $('.shi',$cover).velocity({'margin':'0 0 100px 100px'},{duration:1000});
+	        // $('.jia',$cover).velocity({'margin':'0 0 100px 0'},{duration:1000});
+	        // $('.dian',$cover).velocity({'margin':'0 0 100px 0'},{duration:1000});
+	        // $('.ying',$cover).velocity({'margin':'0 0 100px 100px'},{duration:1000});
+	        $('.wo',$cover).velocity({left:-w_w/2,top:-w_h/2},{duration:1000});
+	        $('.de',$cover).velocity({left:'10px',top:-w_h/2},{duration:1000});
+	        $('.nian',$cover).velocity({left:'220px',top:-w_h/2},{duration:1000});
+	        $('.du',$cover).velocity({left:w_w,top:-w_h/2},{duration:1000});
+	        $('.shi',$cover).velocity({left:-w_w/2,top:w_h},{duration:1000});
+	        $('.jia',$cover).velocity({left:'10px',top:w_h},{duration:1000});
+	        $('.dian',$cover).velocity({left:'220px',top:w_h},{duration:1000});
+	        $('.ying',$cover).velocity({left:w_w,top:w_h},{duration:1000});
+	    }
+	});
+	// 显示选择页面
+	var timer_choose = null;
+	function __show_choose(){
+		$('.container',$choose_list).velocity({rotateZ:'0deg',translateY:'0px'},{complete:function(){
+			$('.title',$choose_list).velocity('transition.fadeIn');
+			$('.page',$choose_list).velocity('transition.fadeIn',{complete:function(){
+				var time_chooseli = 0;
+				$('ul li',$choose_list).each(function(index,item){
+					var $item = $(item);
+					var choose_obj = data[index+1]
+					;
+					$item.find('img').attr('src',choose_obj.pic);
+					$item.find('a').data('movieid',choose_obj.movieid);
+					$item.find('.moviename').text(choose_obj.moviename);
+					// $item.velocity('transition.slideRightIn',{delay:time_chooseli});
+					$item
+					.velocity({rotateZ:'0deg',translateY:'0px',opacity:1},{delay:time_chooseli});
+					time_chooseli+=200;
+					// $item.velocity('transition.fadeIn',{delay:time_resultli+=500});
+					// console.log(time_resultli)
+				});
+				$('.more_icon').velocity('transition.fadeIn',{complete:function(targ){
+					timer_choose = setInterval(function(){
+						$(targ).velocity({translateX:'2px'},{duration: 300,complete:function(targ){
+							$(targ).velocity('reverse',{duration:300});
+						}});
+					},650);
+				},delay:2000});
+				$('.page_icon').velocity('transition.fadeIn',{delay:2000});
+				
+			}});
+		}});
+		
+		// $('#bg_music_1').get(0).pause();
+	}
+	//选择页面向左滑动翻屏操作
+	var movex = [];
+	$('body').on('touchstart','li.choose_list',function(e){
+	    movex = [];
+	    movey = [];
+	});
+	$('body').on('touchmove','li.choose_list',function(e){
+	    movex.push(e.originalEvent.touches[0].pageX);
+	    // movey.push(e.originalEvent.touches[0].pageY);
+	});
+	$('body').on('touchend','li.choose_list',function(e){
+	    var $t = $(e.target);
+	    // console.log(movex[movex.length-1])
+	    // console.log(movex[0])
+	    if((movex[movex.length-1]-movex[0])<-1*30){
+	    	//翻页
+	    	$page_icon.find('a.current').next().click();
+	    	// console.log(3)
+	    }
+	    if(movex[movex.length-1]>movex[0]+30){
+	    	//翻页
+	    	$page_icon.find('a.current').prev().click();
+	    	// console.log(4)
+	    }
+	    // if(movey[movey.length-1]<movey[0]+50){
+	    // 	console.log(1)
+	    // }
+	    // if(movey[movey.length-1]>movey[0]+50){
+	    // 	console.log(2)
+	    // }
+	});
+	$('body').on('click','.page_icon a.dot',function(){
+		var $t = $(this),
+			current_page = $t.index()
+		;
+		if($t.is('.current')) return false;
+		var is_prev_current = $t.prev().is('.current');
+		$('ul',$choose_list).velocity(is_prev_current?'transition.slideLeftOut':'transition.slideRightOut',{duration:400,complete:function(targ){
+			var $targ = $(targ);
+			$targ.find('li').each(function(index,item){
+				var $item = $(item);
+				var choose_obj = data[(index+1)+current_page*9]
+				;
+				// console.log((index+1)+current_page*9);
+				// console.log(choose_obj);
+				$item.find('a.ac_like img').attr('src',choose_obj.pic);
+				$item.find('a.ac_like').data('movieid',choose_obj.movieid);
+				$item.find('.moviename').text(choose_obj.moviename);
+				$item.find('.ac_unlike').remove();
+				if($.inArray(choose_obj.movieid,arr_like)>-1){
+					$item.find('a').click();
+				}
+			});
+			$targ.velocity(is_prev_current?'transition.slideRightIn':'transition.slideLeftIn',{duration:400});
+		}})
+		$t.addClass('current').siblings().removeClass('current');
+	});
+	//选择喜欢
+	$('.ac_like').bind('click',function(){
+		var $t = $(this),
+			$li = $t.closest('li'),
+			mask_choose = $('#mask_choose').html(),
+			$a = $li.find('a'),
+			movieid = $t.data('movieid')
+		;
+		// var like_count = parseInt($('.page span.count',$choose_list).text());
+		// if($mask_choose.css('display')=='flex'){
+		// 	$mask_choose.css('display','none');
+		// 	arr_like.splice($.inArray(movieid,arr_like),1);	
+		// }else{
+		if(arr_like.length>9) return false;
+			if(!$t.prev().is('.ac_unlike')){
+				$t.before(mask_choose);
+			}
+			if($.inArray(movieid,arr_like)==-1) {
+				arr_like.push($t.data('movieid'));
+				$('.page span.count',$choose_list).text(arr_like.length);
+			}
+		// }
+		if(arr_like.length==10){
+			$choose_list.velocity('transition.fadeOut',{complete:function(){
+				var time_resultli = 0;
+				$('.title',$result).removeClass('title_ta');
+				$('.result_footer',$result).show().next().hide();
+				$('.result ul li').each(function(index,item){
+					var $item = $(item);
+					var result = arr_like[index],
+						result_obj = data[result]
+					;
+					$item.find('img').attr('src',result_obj.pic_result);
+					$item.find('.moviename').text(result_obj.moviename);
+					// $item.velocity('transition.slideRightIn',{delay:time_resultli+=500});
+					// $item.velocity('transition.fadeIn',{delay:time_resultli});
+					// time_resultli+=200;
+					// console.log(time_resultli)
+				});
+        		$result.velocity('transition.fadeIn',{delay:500});
+        		shareLink = 'http://yslp.qq.com/shijiadianying.htm?result='+arr_like.join('_');
+        	}});
+		}
+	});
+	$('body').on('click','.ac_unlike',function(){
+		var $t = $(this),
+			movieid = $t.next().data('movieid')
+		;
+		$t.remove();
+		arr_like.splice($.inArray(movieid,arr_like),1);	
+		$('.page span.count',$choose_list).text(arr_like.length);
+	});
+	// var myScroll;
+	// myScroll = new IScroll('#wrapper', {
+	// 	zoom: true,
+	// 	scrollX: true,
+	// 	scrollY: true,
+	// 	mouseWheel: true,
+	// 	wheelAction: 'zoom'
+	// });
+	// 列表scroll
+	var myscroll;
+	function loaded(){
+		myscroll = new iScroll('wrapper',{ checkDOMChanges: true });
+	}
+	// $('#wrapper').height(w_h-151);
+	window.addEventListener('DOMContentLoaded',loaded,false);
+	var myscroll_list;
+	function loaded_list(){
+		myscroll_list = new iScroll('wrapper_list',{ checkDOMChanges: true });
+	}
+	// $('#wrapper').height(w_h-151);
+	window.addEventListener('DOMContentLoaded',loaded_list,false);
+	// var myScroll;
+	// function loaded() {
+	// 	myScroll = new iScroll('wrapper', { checkDOMChanges: true });
+		
+	// 	// setInterval(function () {
+	// 	// 	if (myScroll.isReady())
+	// 	// 		document.getElementById('thelist').innerHTML += '<li>new row</li>';
+	// 	// }, 2000);
+	// }
+
+	// // document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+	// window.addEventListener('DOMContentLoaded', loaded, false);
+	//结果页翻屏操作
+	// $('body').on('touchstart','li.result',function(e){
+	//     movey = [];
+	// });
+	// $('body').on('touchmove','li.result',function(e){
+	//     movey.push(e.originalEvent.touches[0].pageY);
+	// });
+	// $('body').on('touchend','li.result',function(e){
+	//     var $t = $(e.target);
+	//     if(movey[movey.length-1]<movey[0]){
+	//     	//向上
+	//     	// console.log(1)
+	//     	$('ul',$result).scrollTop($('ul',$result).scrollTop()+100);
+	//     }
+	//     if(movey[movey.length-1]>movey[0]){
+	//     	//向下
+	//     	// console.log(2);
+	//     	$('ul',$result).scrollTop($('ul',$result).scrollTop()-100);
+	//     }
+	// });
+	// 默认文案
+	var wxTitle = '来！选出2015年你最爱的十部电影';
+	var wxDesc = '别再上其他榜单的当，专属定制你自己的年度十佳电影，显逼格的时候到了！';
+	var wxImg = 'http://mat1.gtimg.com/yslp/shijiadianying/css/share.jpg';
+	var shareLink = 'http://yslp.qq.com/shijiadianying.htm';
+	//share
+	function stripscript(s) {  
+	    return s.replace(/<script.*?>.*?<\/script>/ig, '');  
+	}
+	// 微信分享
+	var onBridgeReady = function() {
+	    // 分享到朋友圈;
+	    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+	        WeixinJSBridge.invoke('shareTimeline', {
+	            "img_url": wxImg,
+	            "img_width": "160",
+	            "img_height": "160",
+	            "link": shareLink,
+	            "desc": wxDesc,
+	            "title": wxTitle
+	        }, function() {});
+	    })
+	    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+	        WeixinJSBridge.invoke('sendAppMessage', {
+	            "img_url": wxImg,
+	            "link": shareLink,
+	            "desc": wxDesc,
+	            "title": wxTitle
+	        }, function() {})
+	    })
+	    WeixinJSBridge.on('menu:share:weibo', function(argv) {
+	        WeixinJSBridge.invoke('shareWeibo', {
+	            "desc": wxDesc,
+	            "url": shareLink,
+	        }, function(res) {});
+	    })
+	}
+	document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+
+	// 分享begin
+	/* ua */
+	var UA = function(){
+	    var userAgent = navigator.userAgent.toLowerCase();
+	    return {
+	        ipad: /ipad/.test(userAgent),
+	        iphone: /iphone/.test(userAgent),
+	        android: /android/.test(userAgent),
+	        qqnews: /qqnews/.test(userAgent),
+	        weixin: /micromessenger/.test(userAgent),
+	        qqnews_version: userAgent.match(/qqnews/i) == "qqnews" ? userAgent.split('qqnews/')[1] : '',
+	        qnreading:/qnreading/.test(userAgent),
+	        qnwebview:/qnwebview/.test(userAgent)
+	    };
+	};
+	var ua = UA();
+	if(ua.qqnews){
+		$('.page_icon').css('bottom','0px');
+		$('.more_icon').css('bottom','30px');
+	}
+	function shareQQNews() {
+	    var ua = UA();
+	    switch(true){
+	      case ua.qqnews:
+	        if(window.TencentNews && window.TencentNews.setShareArticleInfo){
+	            window.TencentNews.setShareArticleInfo(wxTitle, wxDesc, wxDesc, shareLink, wxImg);
+	        }
+	        if(window.TencentNews && window.TencentNews.showShareMenu) {
+	            window.TencentNews.showShareMenu(shareLink, wxTitle, wxDesc, wxImg,"news_news_wc");
+	        }else{
+	            window.TencentNews.shareFromWebView(wxTitle, wxDesc, wxImg);
+	        }
+	        break;
+	      case ua.weixin:
+	        $('.pop_share').popUp();
+	        break;
+	      case ua.qnreading:
+	        $('.pop_share').popUp();
+	        break;
+	      case ua.qnwebview:
+	        $('.pop_share').popUp();
+	        break;
+	      default:
+	        // window.location = "http://share.v.t.qq.com/index.php?c=share&a=index&appkey=801378464&url="
+	        // + shareLink + "&title="
+	        // + wxTitle +"&pic="
+	        // + wxImg + "&des="
+	        // + wxDesc;
+	        $('.pop_share').popUp();
+	        break;
+	    };
+	}
+	/*分享over*/
+	// 点击分享
+	window.callbacktimer = null;
+	$('.ac_share').click(function(){
+	    shareQQNews();
+	});
+});
+</script>
+
+</body>
+</html>
