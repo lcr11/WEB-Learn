@@ -1,0 +1,9 @@
+.content{
+  padding:22rpx 28rpx;
+
+}
+.title{line-height: 50rpx;font-weight: bold;}
+.avatar{width: 45rpx;height:45rpx;vertical-align: middle;margin-right: 10rpx;}
+.info{font-size:14px;border-bottom: 1px solid #ccc;line-height: 60rpx;padding-bottom: 10rpx;}
+.time,.author{margin-right: 10rpx;}
+.cover{width: 100%;padding: 55rpx 0}

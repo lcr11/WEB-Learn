@@ -1,0 +1,8 @@
+.cover{height:376rpx;display: flex;justify-content: center;align-items: center;}
+.cover_bg{width: 100%;position: absolute;top: 0;left: 0;z-index: -1;height: 376rpx;filter:blur(10px);}
+.info{color: #fff;}
+.cover_small{width: 155rpx;height: 155rpx;border-radius: 100%;}
+.nickname{text-align: center}
+.my{padding: 0 30rpx 0 35rpx}
+.favorite{display: flex;flex-direction: row;position: relative;line-height: 103rpx;border-bottom:1px solid #f2f2f2}
+.favorite image{width: 13rpx;height: 20rpx;position: absolute;right: 0;top: 40rpx;}

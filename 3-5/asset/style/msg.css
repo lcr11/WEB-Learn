@@ -1,0 +1,33 @@
+body{background-color:#f7f7f7;}
+.msg_wall{position:absolute; left:0; right:0; top:0; bottom:0; overflow:hidden;}
+.msg dl{padding:20px; margin-bottom:10px; background-color:#fff; position:relative;}
+.msg dl:before{content:'.'; display:block; font-size:0; line-height:0; height:1px; left:0; right:0; bottom:0; position:absolute; background-color:#ccc; transform-origin:left bottom; -webkit-transform-origin:left bottom;}
+.msg dt{width:50px; height:50px; float:left;}
+.msg dt img{display:block; width:100%; border-radius:100%;}
+.msg dd{margin-left:65px; line-height:20px; font-size:14px;}
+.msg .name{color:#000; margin-bottom:7px; line-height:20px; font-size:17px; line-height:17px; height:17px;}
+.msg .summary{line-height:20px; max-height:40px; font-size:14px; overflow:hidden; text-overflow:ellipsis; overflow:hidden; -webkit-text-overflow:ellipsis; line-clamp:2; -webkit-line-clamp:2; box-orient:vertical; -webkit-box-orient:vertical; display:box; display:-webkit-box;}
+.msg .time{font-size:12px; line-height:12px; height:12px; margin-top:10px;}
+
+@media screen and (max-width:320px) {
+	.msg dl{padding:15px;}
+	.msg dt{width:40px; height:40px;}
+	.msg .name{font-size:14px; height:14px; line-height:14px; margin-bottom:5px;}
+	.msg .summary{font-size:12px; line-height:16px; max-height:32px;}
+	.msg .time{margin-top:8px;}
+	.msg dd{margin-left:55px;}
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2.0),
+only screen and (-moz-min-device-pixel-ratio: 2.0),
+only screen and (-o-min-device-pixel-ratio: 200/100),
+only screen and (min-device-pixel-ratio: 2.0) {
+    .msg dl:before{transform:scaleY(0.5); -webkit-transform:scaleY(0.5);}
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3),
+only screen and (-moz-min-device-pixel-ratio: 3),
+only screen and (-o-min-device-pixel-ratio: 300/100),
+only screen and (min-device-pixel-ratio: 3.0) {
+    .msg dl:before{transform:scaleY(0.33333334); -webkit-transform:scaleY(0.33333334);}
+}

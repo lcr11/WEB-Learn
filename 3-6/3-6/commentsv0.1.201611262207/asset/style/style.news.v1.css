@@ -1,0 +1,134 @@
+/*reset*/
+html{background:none;color:#444; min-height:100%;}
+body{font-size:12px;font-family:verdana;line-height:1.8em; font-family:Helvetica,Hei; background-color:#fff; min-height:100%; width:100%; overflow-x:hidden;}
+body, div, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, textarea, p, th, td, dl, dt, dd{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+img{border:none;}
+address, caption, cite, code, dfn, em, th, var, b, i{font-style:normal;font-weight:normal;}
+li{list-style-image:none;list-style-position: outside;list-style-type:none;}
+caption, th{text-align:left;}
+h1, h2, h3, h4, h5, h6{font-size:100%;font-weight:normal;vertical-align:baseline;zoom:1;}
+input, textarea, select, button{font-size: 12px;font-weight:inherit; vertical-align:middle}
+input[type=radio], input[type=checkbox]{vertical-align: middle; margin-right:5px;}
+textarea{resize:none;}
+input[type=text],input[type=password],textarea, input[type=text]:focus, input[type=password]:focus, textarea:focus, button, button:focus{-webkit-appearance:textfield;outline:0}
+/*base*/
+a{text-decoration:none; color:#323232;}
+a:focus{outline-style:none;outline-width:0;}
+a:link, a:visited, a:active{text-decoration:none;}
+a:hover{text-decoration:none;}
+label.checkbox, label.radio, label.text{padding-left:4px;vertical-align:top;}
+/*margin*/
+/*clear*/
+.clearfix:after{content: ".";display: block;height:0;clear: both;visibility:hidden}
+.clearfix {zoom:1}
+.am_css{transition:all 0.3s ease-out; -webkit-transition:all 0.3s ease-out;}
+.layout{background-color:#fff;padding-top:1px;position:relative; transform-origin:left top; -webkit-transform-origin:left top; padding-bottom:51px;}
+#canvasWall{width:640px;}
+.gray{color:#cacacb!important;}
+
+.mask{background-color:rgba(0,0,0,0); position:fixed; left:0; top:0; right:0; bottom:0; z-index:98;}
+.mask2{background-color:rgba(0,0,0,0.7); position:fixed; left:0; top:0; right:0; bottom:0; z-index:98;}
+
+.pop_tips{position:fixed; top:50%; margin-top:-25px; height:30px; padding:10px 0; line-height:30px; text-align:center; color:#fff; font-size:14px; background-color:rgba(38,38,38,0.7); left:30px; right:30px; border-radius:6px; z-index:99;}
+
+.pop_alert{position:fixed; left:30px; right:30px; background-color:#fff; font-size:14px; text-align:center; border-radius:6px; top:50%; box-shadow:3px 3px 8px rgba(0,0,0,0.2); z-index:99;}
+.pop_alert .title{line-height:30px; padding:5px 0;}
+.pop_alert section{padding:20px; line-height:24px; min-height:40px;}
+.pop_alert .pop_footer{border-top:1px solid #d2d2d2; line-height:46px; height:46px;}
+.pop_alert .pop_footer a{display:block;position:relative;}
+.pop_alert .pop_footer.dba a{width:50%; float:left;}
+.pop_alert .pop_footer.dba a:first-child:before{width:1px; height:100%; background-color:#d2d2d2; display:block; content:'.'; font-size:0; position:absolute; top:0; right:0;}
+/*.pop_alert .pop_cancel{color:#b6b6bb;}*/
+.pop_alert .pop_ok{color:#ec4646;}
+
+.pageTitle{padding:18px 20px 9px 20px; font-size:23px; line-height:36px; position:relative; color:#000; transition:all 0.3s ease-out; -webkit-transition:all 0.3s ease-out; font-family:Microsoft YaHei;}
+.layout.edit .pageTitle.mod_item_last{border:0;}
+.inner{word-wrap:break-word; display:none;}
+.pageTitle textarea{line-height:36px; font-size:23px; border:0; background:none; width:100%; display:block; font-family:Microsoft YaHei;}
+.pageTitle textarea::-webkit-input-placeholder{font-weight:normal;}
+.pageTitle textarea::-moz-input-placeholder{font-weight:normal;}
+textarea::-webkit-input-placeholder{color:#cacacb;}
+textarea::-moz-input-placeholder{color:#cacacb;}
+.title_d{font-size:12px; color:#aaa; line-height:16px; padding-bottom:16px; height:16px; overflow:hidden; margin:0 20px 10px 20px; border-bottom:1px solid #e1e1e1;}
+.title_d textarea{width:100%; font-size:13px; line-height:16px; height:16px; overflow:hidden; color:#aaa; border:0; background:none; display:block;}
+.layout.edit .title_d, .layout.sort .title_d{margin:0 0 15px 0; padding:16px 20px; background-color:#f5f5f5; border-top:1px solid #dddee0;}
+
+.layout.edit{padding-bottom:110px;}
+.layout.edit .mod_txt{background-color:#f5f5f5; border-color:#dddee0; padding:8px 20px;}
+.layout.edit .mod_pic{border-width:1px 0 0 0; padding:15px; border-style:solid; border-color:#dddee0; background-color:#f5f5f5;}
+.layout.sort .mod_txt{background-color:#f5f5f5; border:0; padding:8px 16px;}
+.layout.sort .mod_pic{padding:15px; background-color:#f5f5f5;}
+.layout.edit .inner, .layout.sort .inner{display:none;}
+.layout.edit .ac_textarea, .layout.sort .ac_textarea{display:block;}
+.ac_textarea{ font-family:Helvetica,"黑体"; display:block;}
+.layout.edit .mod_item_first, .layout.sort .mod_item_first{border-top:1px solid #dddee0;}
+.layout.edit .mod_pic.mod_item_first{padding-top:15px;}
+.layout.sort .mod_item_first{padding-top:15px;}
+
+.op_add_wall{position:relative; height:0; transition:all 0.3s ease-out; -webkit-transition:all 0.3s ease-out; z-index:2;}
+.op_add_wall.start, .op_add_wall.current{height:110px;}
+.op_add_mod,.op_add_pic,.op_add_txt, .op_add_title{width:45px; height:45px; left:50%; margin-left:-22px; top:50%; margin-top:-32px; background-size:100%; background-repeat:no-repeat; background-position:center center; position:absolute;}
+.op_add_mod span,.op_add_pic span,.op_add_txt span, .op_add_title span{width:48px; height:14px; line-height:14px; color:#757575; font-size:12px; text-align:center; display:block; position:absolute; top:52px; left:50%; margin-left:-22px; color:#000;}
+.op_add_mod{margin-top:-45px; background-image:url(http://mat1.gtimg.com/yslp/changtu/css/op_add_mod.png); width:30px; height:30px; margin-left:-15px; margin-top:-15px; background-size:15px;}
+.op_add_wall.start .op_add_mod{width:45px; height:45px; margin-left:-22px; margin-top:-22px; background-size:45px;}
+.op_add_pic{opacity:0; background-image:url(http://mat1.gtimg.com/yslp/changtu/css/op_add_pic.png); display:none;}
+.op_add_txt{opacity:0; background-image:url(http://mat1.gtimg.com/yslp/changtu/css/op_add_txt.png); display:none;}
+
+.mod_pic{position:relative; padding:8px 20px; position:relative;}
+.mod_pic img{display:block; width:100%;}
+.mod_txt{padding:8px 20px 8px 20px; min-height:32px; line-height:32px; font-size:18px; position:relative; transition:all 0.3s ease-out; -webkit-transition:all 0.3s ease-out; border-width:1px 0 0 0; border-style:solid; border-color:#fff; color:#1e2128; word-wrap:break-word;}
+.mod_txt textarea{line-height:32px; font-size:18px; width:100%; border:0; background:none; color:#1e2128; word-wrap:break-word;}
+
+.layout.edit .mod_item_last{border-bottom:1px solid #dddee0;}
+.layout.sort .mod_item_last{border:0;}
+
+
+.op_add_title{opacity:0; background-image:url(http://mat1.gtimg.com/yslp/changtu/css/op_add_title.png); display:none;}
+
+/*图注*/
+.mod_pic section{line-height:17px; font-size:14px; padding:11px 0 0 0; color:#6c6c6c; transition:all 0.3s ease-out; -webkit-transition:all 0.3s ease-out; text-align:center;}
+.mod_pic section textarea{color:#6c6c6c; line-height:17px; font-size:14px; width:100%; border:0; background:none; text-align:center;}
+
+.mod_title{padding:10px 20px; line-height:30px; font-weight:bold; font-size:18px; position:relative;}
+.mod_title textarea{width:100%; line-height:30px; font-size:18px; font-weight:bold; border:0; background:none;}
+
+.layout.edit .mod_title{background-color:#f5f5f5; border-top:1px solid #dddee0;}
+
+
+
+@keyframes loading{
+	0%  {transform:rotate(0deg);}
+	100% {transform:rotate(360deg);}
+}
+@-webkit-keyframes loading{
+	0%  {-webkit-transform:rotate(0deg);}
+	100% {-webkit-transform:rotate(360deg);}
+}
+
+@media screen and (max-width:414px) {
+}
+@media screen and (max-width:375px) {
+	.pageTitle{line-height:33px; min-height:33px; font-size:21px; padding:20px 20px 10px 20px;}
+	.pageTitle textarea{line-height:33px; min-height:33px; font-size:21px;}
+	.mod_txt{line-height:30px; font-size:18px; min-height:30px;}
+	.mod_txt textarea{line-height:30px; font-size:18px;}
+	.mod_pic section{padding-top:10px;}
+}
+@media screen and (max-width:320px) {
+	.pageTitle{line-height:31px; font-size:20px; padding:16px 16px 13px 16px;}
+	.title_d{padding-bottom:13px; margin:0 16px 10px 20px;}
+	.mod_pic{padding:8px 16px;}
+	.mod_txt{padding:8px 16px; line-height:28px; min-height:28px; font-size:16px;}
+	.mod_txt textarea{line-height:28px; font-size:16px;}
+	.mod_title{font-size:16px;}
+	.mod_title textarea{font-size:16px;}
+}
+.inner{display:block;}
+div#borderLogo{border-bottom: 1px #c5c5c5 solid; margin:0 16px;display:none;}
+#borderLogo .logoImg{height:50px; background-image: url(http://mat1.gtimg.com/yslp/changtu/css/news_logo.png); background-repeat: no-repeat; background-position:0 center; background-size: 135px 18px;}
+.inscription{margin-top:76px;}
+.inscription .author{line-height:34px;}
+.readed{padding:0 20px; line-height:34px; font-size:24px; color:#abaeb0; margin-bottom:15px;}
+header{z-index:3;}
+section.noborder{border-top:none;background-color:#fff;}
